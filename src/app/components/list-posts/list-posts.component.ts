@@ -10,7 +10,7 @@ export class ListPostsComponent implements OnInit {
 	posts: any = [];
   constructor(private http: HttpClient) { }
 
-  currentPage = 1;
+  currentPage = 4;
   postsPerPage: number = 10;
   indexOfLastPost = this.currentPage * this.postsPerPage;
   indexOfFirstPost = this.indexOfLastPost - this.postsPerPage;
