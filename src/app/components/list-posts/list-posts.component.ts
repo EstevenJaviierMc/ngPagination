@@ -28,7 +28,9 @@ export class ListPostsComponent implements OnInit {
    		this.posts = data;
       this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
    	});
-    
-
+  }
+  
+  ngAfterOnChanges() {
+     this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
   }
 }
