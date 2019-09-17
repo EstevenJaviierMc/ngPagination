@@ -10,7 +10,7 @@ count: number = 0;
 
    ngDoCheck() {
 
-     async for(let i= 0; i<10; i++){
+     async for(let i= 0; i<10; i++;){
        setTimeout(() => { count = await i; },1000);
 
      };
