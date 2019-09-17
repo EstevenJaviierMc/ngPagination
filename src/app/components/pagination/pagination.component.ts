@@ -18,7 +18,7 @@ export class PaginationComponent implements OnInit {
       for (let i = 1; i <= Math.ceil(this.totalPosts / this.postsPerPage); i++) {
         this.pageNumbers.push(i);
       }
-    },500)
+    },1000)
   }
 
 }
