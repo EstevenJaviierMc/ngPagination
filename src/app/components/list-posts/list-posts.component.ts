@@ -1,4 +1,4 @@
-import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -27,10 +27,11 @@ export class ListPostsComponent implements OnInit {
    	.subscribe(data => {
    		this.posts = data;
       this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
+alert(this.currentPosts[99].title);
    	});
   }
   
-  ngOnChanges(changes: SimpleChanges) {
+  ngDoCheck() {
      this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
   }
 }
