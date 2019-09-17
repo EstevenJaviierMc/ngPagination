@@ -10,13 +10,13 @@ export class ListPostsComponent implements OnInit {
 	posts: any = [];
   constructor(private http: HttpClient) { }
 
-  currentPage = 4;
+  currentPage = 1;
   postsPerPage: number = 10;
   indexOfLastPost = this.currentPage * this.postsPerPage;
   indexOfFirstPost = this.indexOfLastPost - this.postsPerPage;
   currentPosts: any = [];
 
-  paginate = function(pageNumber: number) {
+  paginate(pageNumber: number) {
   	this.currentPage = pageNumber;
   };
 
