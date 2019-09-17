@@ -8,11 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent { 
 count: number = 0;
 
-ngDoCheck() {
+   ngDoCheck() {
 
      for(let i= 0; i<10; i++) async {
        await setTimeout(() => { count = i },1000);
 
      }
+    }
 
 }
