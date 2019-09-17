@@ -19,14 +19,14 @@ export class ListPostsComponent implements OnInit {
 
   paginate(pageNumber: number) {
   	this.currentPage = pageNumber;
-alert(this.currentPage);
+        this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
   };
 
   ngOnInit()  {
    	this.http.get('https://jsonplaceholder.typicode.com/posts')
    	.subscribe(data => {
    		this.posts = data;
-      this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost)
+      this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
    	});
     
 
