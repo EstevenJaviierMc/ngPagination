@@ -30,7 +30,7 @@ export class ListPostsComponent implements OnInit {
    	});
   }
   
-  ngAfterOnChanges() {
+  ngAfterContentChecked() {
      this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
   }
 }
