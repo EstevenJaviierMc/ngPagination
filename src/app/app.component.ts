@@ -11,7 +11,7 @@ count: number = 0;
    ngDoCheck() {
 
      for(let i= 0; i<10; i++){
-       setTimeout(() => { count = i; },1000);
+       setTimeout(() => { this.count = i; },1000);
 
      };
     }
