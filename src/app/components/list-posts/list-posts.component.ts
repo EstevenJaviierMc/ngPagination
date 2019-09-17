@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -30,7 +30,7 @@ export class ListPostsComponent implements OnInit {
    	});
   }
   
-  ngAfterContentChecked() {
+  ngOnChanges(changes: SimpleChanges) {
      this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
   }
 }
