@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent { 
 count: number = 0;
 
-   ngAfterContentCheck() {
+   ngAfterContentChecked() {
 
      
     setInterval(() => { this.count = this.count+1; },1000);
