@@ -10,10 +10,10 @@ count: number = 0;
 
    ngDoCheck() {
 
-     for(let i= 0; i<10; i++){
-       setTimeout(() => { this.count = i; },1000);
+     
+    setInterval(() => { this.count = this.count++; },1000);
 
-     };
+    
     }
 
 }
