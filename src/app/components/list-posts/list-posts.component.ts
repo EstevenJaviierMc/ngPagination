@@ -16,9 +16,9 @@ export class ListPostsComponent implements OnInit {
   indexOfFirstPost = this.indexOfLastPost - this.postsPerPage;
   currentPosts: any = [];
 
-  paginate(pageNumber) {
+  paginate: void = function(pageNumber) {
   	this.currentPage = pageNumber;
-  }
+  };
 
   ngOnInit()  {
    	this.http.get('https://jsonplaceholder.typicode.com/posts')
