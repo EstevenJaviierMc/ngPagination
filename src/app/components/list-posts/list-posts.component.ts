@@ -16,7 +16,7 @@ export class ListPostsComponent implements OnInit {
   indexOfFirstPost = this.indexOfLastPost - this.postsPerPage;
   currentPosts: any = [];
 
-  paginate: void = function(pageNumber) {
+  paginate = function(pageNumber: number) {
   	this.currentPage = pageNumber;
   };
 
