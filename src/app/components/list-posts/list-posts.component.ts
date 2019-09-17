@@ -19,6 +19,7 @@ export class ListPostsComponent implements OnInit {
 
   paginate(pageNumber: number) {
   	this.currentPage = pageNumber;
+alert(this.currentPage);
   };
 
   ngOnInit()  {
