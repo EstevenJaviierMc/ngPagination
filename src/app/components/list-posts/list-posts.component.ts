@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -18,8 +18,9 @@ export class ListPostsComponent implements OnInit {
   indexOfFirstPost = this.indexOfLastPost - this.postsPerPage;
   currentPosts: any = [];
 
-  paginate(pageNumber: number) {
+  _paginate(pageNumber: number) {
   	this.currentPage = pageNumber;
+    this.currentPage.emit();
   };
 
   ngOnInit()  {
