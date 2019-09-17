@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ListPostsComponent implements OnInit {
 	posts: any = [];
+  
+  @Output() paginate: EventEmitter<null> = new EventEmitter();
   constructor(private http: HttpClient) { }
 
   currentPage = 1;
