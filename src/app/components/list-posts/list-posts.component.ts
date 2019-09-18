@@ -8,25 +8,27 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ListPostsComponent implements OnInit {
 	posts: any = [];
+  currentPosts: any = [];
+
+  currentPage: number = 1;
+  postsPerPage: number = 10;
+  indexOfLastPost: number;
+  indexOfFirstPost: number;
   
   constructor(private http: HttpClient) { }
-
-  currentPage = 1;
-  postsPerPage: number = 10;
-  indexOfLastPost = this.currentPage * this.postsPerPage;
-  indexOfFirstPost = this.indexOfLastPost - this.postsPerPage;
-  currentPosts: any = [];
 
   ngOnInit()  {
    	this.http.get('https://jsonplaceholder.typicode.com/posts')
    	.subscribe(data => {
    		this.posts = data;
-      this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
    	});
   }
 
-  paginate(pageNumber: number): void {
+  paginate(pageNumber: number) {
   	this.currentPage = pageNumber;
+  }
+
+  ngDoCheck() {
     this.indexOfLastPost = this.currentPage * this.postsPerPage;
     this.indexOfFirstPost = this.indexOfLastPost - this.postsPerPage;
     this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
