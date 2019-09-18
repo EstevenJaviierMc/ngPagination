@@ -20,7 +20,6 @@ currentPage: number = 1;
 
   paginate(pageNumber: number) {
   	this.currentPage = pageNumber;
-alert(this.currentPage);
   }
   ngOnChanges() {
     for (let i = 1; i <= Math.ceil(this.totalPosts / this.postsPerPage); i++) {
