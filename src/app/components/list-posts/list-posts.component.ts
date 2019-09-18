@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewCkecked } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewChecked } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {PaginationComponent} from '../pagination/pagination.component';
 @Component({
