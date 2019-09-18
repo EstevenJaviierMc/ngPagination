@@ -22,15 +22,13 @@ export class ListPostsComponent implements OnInit {
    	.subscribe(data => {
    		this.posts = data;
       this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
-      console.log(this.currentPosts);
-        console.log(this.posts);  
    	});
   }
 
   paginate(pageNumber: number): void {
-  	//this.currentPage = pageNumber;
-        console.log(this.currentPosts);
-        console.log(this.posts);
-       // this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
+  	this.currentPage = pageNumber;
+    this.indexOfLastPost = this.currentPage * this.postsPerPage;
+    this.indexOfFirstPost = this.indexOfLastPost - this.postsPerPage;
+    this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
   }
 }
