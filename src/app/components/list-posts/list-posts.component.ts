@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -10,7 +10,7 @@ export class ListPostsComponent implements OnInit {
 	posts: any = [];
   currentPosts: any = [];
 
-  @Input() currentPage: number = 1;
+  @OutPut() currentPage: number = 1;
   postsPerPage: number = 10;
   indexOfLastPost: number;
   indexOfFirstPost: number;
