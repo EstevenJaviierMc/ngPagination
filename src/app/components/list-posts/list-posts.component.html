@@ -1,4 +1,4 @@
-<app-pagination [postsPerPage]="postsPerPage" [totalPosts]="posts.length" [(paginate)]="paginate"></app-pagination>
+<app-pagination [postsPerPage]="postsPerPage" [totalPosts]="posts.length" (paginate)="paginate"></app-pagination>
 <div class="list-group">
   <a *ngFor="let post of currentPosts; index as i;"
   	  class="list-group-item" 
