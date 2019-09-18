@@ -17,12 +17,6 @@ export class ListPostsComponent implements OnInit {
   indexOfFirstPost = this.indexOfLastPost - this.postsPerPage;
   currentPosts: any = [];
 
-  paginate(pageNumber: number) {
-  	this.currentPage = pageNumber;
-        this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
-        alert("aquí estoy "+this.currentPage);
-  };
-
   ngOnInit()  {
    	this.http.get('https://jsonplaceholder.typicode.com/posts')
    	.subscribe(data => {
@@ -30,6 +24,12 @@ export class ListPostsComponent implements OnInit {
                 this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
       
    	});
+  }
+
+  paginate(pageNumber: number) {
+  	this.currentPage = pageNumber;
+        this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
+        alert("aquí estoy "+this.currentPage);
   }
   
   ngDoCheck() {
