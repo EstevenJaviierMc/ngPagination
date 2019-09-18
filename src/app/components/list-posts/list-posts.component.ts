@@ -1,13 +1,14 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import {PaginationComponent} from './../pagination/pagination.compoment';
 @Component({
   selector: 'app-list-posts',
   templateUrl: './list-posts.component.html',
   styleUrls: ['./list-posts.component.css']
 })
 export class ListPostsComponent implements OnInit {
-	posts: any = [];
+@ViewChild(PaginationComponent) child;	
+posts: any = [];
   currentPosts: any = [];
 
   @OutPut() currentPage: number = 1;
@@ -24,13 +25,12 @@ export class ListPostsComponent implements OnInit {
    	});
   }
 
-  paginate(pageNumber: number) {
-  	this.currentPage = pageNumber;
-  }
-
   ngDoCheck() {
     this.indexOfLastPost = this.currentPage * this.postsPerPage;
     this.indexOfFirstPost = this.indexOfLastPost - this.postsPerPage;
     this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
+  }
+  ngAfterViewInit() {
+    this.currentPage = this.child.currentPage;
   }
 }
