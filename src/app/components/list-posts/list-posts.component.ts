@@ -31,8 +31,4 @@ export class ListPostsComponent implements OnInit {
         this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
         alert("aquí estoy "+this.currentPage);
   }
-  
-  ngDoCheck() {
-     this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
-  }
 }
