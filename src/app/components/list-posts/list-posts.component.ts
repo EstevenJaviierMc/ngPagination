@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {PaginationComponent} from './../pagination/pagination.compoment';
+import {PaginationComponent} from './../pagination/pagination.component';
 @Component({
   selector: 'app-list-posts',
   templateUrl: './list-posts.component.html',
