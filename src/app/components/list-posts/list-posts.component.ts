@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewCkecked } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {PaginationComponent} from '../pagination/pagination.component';
 @Component({
@@ -30,7 +30,7 @@ posts: any = [];
     this.indexOfFirstPost = this.indexOfLastPost - this.postsPerPage;
     this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
   }
-  ngAfterViewInit() {
+  ngAfterViewChecked() {
     this.currentPage = this.child.currentPage;
 alert(this.currentPage + " - " + this.child.currentPage);
   }
