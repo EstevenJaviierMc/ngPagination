@@ -13,12 +13,15 @@ export class PaginationComponent implements OnInit {
  pageNumbers = [];
   constructor() { }
 
-  ngOnInit() {    
-  	setTimeout(() => {
+  ngOnInit() {
       for (let i = 1; i <= Math.ceil(this.totalPosts / this.postsPerPage); i++) {
         this.pageNumbers.push(i);
       }
-    },1000)
+  }
+  ngOnChanges() {
+    for (let i = 1; i <= Math.ceil(this.totalPosts / this.postsPerPage); i++) {
+        this.pageNumbers.push(i);
+      }
   }
 
 }

@@ -21,14 +21,16 @@ export class ListPostsComponent implements OnInit {
    	this.http.get('https://jsonplaceholder.typicode.com/posts')
    	.subscribe(data => {
    		this.posts = data;
-                this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
-      
+      this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
+      console.log(this.currentPosts);
+        console.log(this.posts);  
    	});
   }
 
   paginate(pageNumber: number): void {
-  	this.currentPage = pageNumber;
-        this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
-        alert("aquí estoy "+this.currentPage);
+  	//this.currentPage = pageNumber;
+        console.log(this.currentPosts);
+        console.log(this.posts);
+       // this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
   }
 }
