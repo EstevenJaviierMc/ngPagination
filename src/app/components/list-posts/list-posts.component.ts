@@ -11,7 +11,7 @@ export class ListPostsComponent implements OnInit {
 posts: any = [];
   currentPosts: any = [];
 
-  @OutPut() currentPage: number = 1;
+  currentPage: number = 1;
   postsPerPage: number = 10;
   indexOfLastPost: number;
   indexOfFirstPost: number;
