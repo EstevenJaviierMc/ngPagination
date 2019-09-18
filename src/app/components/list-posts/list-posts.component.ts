@@ -7,7 +7,7 @@ import {PaginationComponent} from '../pagination/pagination.component';
   styleUrls: ['./list-posts.component.css']
 })
 export class ListPostsComponent implements OnInit {
-@ViewChild(PaginationComponent) child;	
+@ViewChild(PaginationComponent, {static: false} ) child;	
 posts: any = [];
   currentPosts: any = [];
 
