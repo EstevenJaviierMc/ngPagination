@@ -27,8 +27,7 @@ export class ListPostsComponent implements OnInit {
    	.subscribe(data => {
    		this.posts = data;
       this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
-alert(this.currentPosts[96].title);
-alert("aquí estoy");
+      alert("aquí estoy "+this.currentPage);
    	});
   }
   
