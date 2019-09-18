@@ -26,13 +26,12 @@ posts: any = [];
   }
 
   ngDoCheck() {
-alert(this.currentPage + " - "+ this.child.currentPage);
     this.indexOfLastPost = this.currentPage * this.postsPerPage;
     this.indexOfFirstPost = this.indexOfLastPost - this.postsPerPage;
     this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost);
   }
   ngAfterViewInit() {
     this.currentPage = this.child.currentPage;
-alert(this.currentPage);
+alert(this.currentPage + " - " + this.child.currentPage);
   }
 }
