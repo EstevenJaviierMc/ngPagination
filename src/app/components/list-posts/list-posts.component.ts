@@ -32,6 +32,5 @@ posts: any = [];
   }
   ngAfterViewChecked() {
     this.currentPage = this.child.currentPage;
-alert(this.currentPage + " - " + this.child.currentPage);
   }
 }
