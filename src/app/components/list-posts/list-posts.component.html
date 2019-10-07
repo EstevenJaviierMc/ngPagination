@@ -1,7 +1,7 @@
-<button class="btn btn-primary" (click)="paginate(6)">Page {{currentPage}}</button>
-<app-pagination [postsPerPage]="postsPerPage" [totalPosts]="posts.length" [(paginate)]="paginate"></app-pagination>
-<div class="list-group">
-  <a *ngFor="let post of currentPosts; index as i;"
+
+<div *ngIf="loading">Loading...</div>
+<div class="list-group" *ngIf="!loading" class="mb-5">
+  <a *ngFor="let post of posts; index as i;"
   	  class="list-group-item" 
   	  routerLink="['#']"
   	  class="list-group-item list-group-item-action"
