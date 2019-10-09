@@ -1,14 +1,14 @@
-<app-pagination postsPerPage="{{postsPerPage}}" totalPosts="{{posts.length}}" paginate="{{paginate}}"></app-pagination>
-{{paginate()}}
-<div class="list-group">
-  <a *ngFor="let post of currentPosts; index as i;"
+
+<div *ngIf="loading">Loading...</div>
+<div class="list-group" *ngIf="!loading" class="mb-5">
+  <a *ngFor="let post of posts; index as i;"
   	  class="list-group-item" 
   	  routerLink="['#']"
   	  class="list-group-item list-group-item-action"
   	  >
 
     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">{{ post.title }} - {{ post.id }}</h5>
+      <h5 class="mb-1">{{ post.id }}. {{ post.title }}</h5>
     </div>
 
     <p class="mb-1">{{ post.body }}</p>

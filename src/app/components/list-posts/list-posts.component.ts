@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-list-posts',
@@ -7,26 +6,13 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./list-posts.component.css']
 })
 export class ListPostsComponent implements OnInit {
-	posts: any = [];
-  constructor(private http: HttpClient) { }
+  @Input() posts: any;
+  @Input() loading: boolean;
+  
+  constructor() { }
 
-  currentPage = 4;
-  postsPerPage: number = 10;
-  indexOfLastPost = this.currentPage * this.postsPerPage;
-  indexOfFirstPost = this.indexOfLastPost - this.postsPerPage;
-  currentPosts: any = [];
-
-  paginate(pageNumber) {
-  	this.currentPage = pageNumber;
+  ngOnInit() {
   }
-
-  ngOnInit()  {
-   	this.http.get('https://jsonplaceholder.typicode.com/posts')
-   	.subscribe(data => {
-   		this.posts = data;
-      this.currentPosts = this.posts.slice(this.indexOfFirstPost, this.indexOfLastPost)
-   	});
-    
-
+  ngOnChanges() {
   }
 }

@@ -8,17 +8,21 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PaginationComponent implements OnInit {
 @Input() postsPerPage: number;
 @Input() totalPosts: number;
-@Input() paginate: void;
+@Input() paginate;
 
  pageNumbers = [];
   constructor() { }
 
-  ngOnInit() {    
-  	setTimeout(() => {
-      for (let i = 1; i <= Math.ceil(this.totalPosts / this.postsPerPage); i++) {
-        this.pageNumbers.push(i);
-      }
-    },500)
+  ngOnInit() { }
+  
+  ngOnChanges() {
+    for (let i = 1; i <= Math.ceil(this.totalPosts / this.postsPerPage); i++) {
+      this.pageNumbers.push(i);
+    }
+  }
+
+  next() {
+    this.postsPerPage++;
   }
 
 }
