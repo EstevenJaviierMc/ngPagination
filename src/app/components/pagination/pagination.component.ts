@@ -6,11 +6,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./pagination.component.css']
 })
 export class PaginationComponent implements OnInit {
-@Input() postsPerPage: number;
-@Input() totalPosts: number;
-@Input() paginate: void;
+  @Input() postsPerPage: number;
+  @Input() totalPosts: number;
+  @Input() paginate: any;
 
- pageNumbers = [];
+  first = 1;
+  end:number ;
+
+  pageNumbers = [];
   constructor() { }
 
   ngOnInit() { }
@@ -19,10 +22,7 @@ export class PaginationComponent implements OnInit {
     for (let i = 1; i <= Math.ceil(this.totalPosts / this.postsPerPage); i++) {
       this.pageNumbers.push(i);
     }
-  }
-
-  next() {
-    this.postsPerPage++;
+    this.end = this.pageNumbers.length;
   }
 
 }

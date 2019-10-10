@@ -1,15 +1,14 @@
 <div class="scroll">
   <nav aria-label="Page navigation example">
     <ul class="pagination pagination justify-content-center">
-      <li class="page-item disabled">
+      <li class="page-item disable">
         <a class="page-link" routerLink="['#']" tabindex="-1" aria-disabled="true">Previous</a>
       </li>
       <li *ngFor="let pg of pageNumbers" class="page-item">
-
         <a class="page-link" routerLink="['#']" (click)="paginate(pg)">{{ pg }}</a>
       </li>
       <li class="page-item">
-        <a class="page-link" (click)="next()" routerLink="['#']" >Next</a>
+        <a class="page-link" routerLink="['#']">Next</a>
       </li>
     </ul>
   </nav>
