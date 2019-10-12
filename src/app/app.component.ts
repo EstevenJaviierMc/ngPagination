@@ -27,7 +27,6 @@ export class AppComponent implements OnInit {
    		this.posts = data;
       this.loading = false;
    	});
-    console.log(currentPage)
   }
 
   paginate(pageNumber: number) {
