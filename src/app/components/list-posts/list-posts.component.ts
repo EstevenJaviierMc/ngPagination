@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
-import { PaginationComponent } from '../pagination/pagination.component';
 @Component({
   selector: 'app-list-posts',
   templateUrl: './list-posts.component.html',
@@ -8,9 +7,12 @@ import { PaginationComponent } from '../pagination/pagination.component';
 })
 export class ListPostsComponent implements OnInit {
 
+  @Input() posts: any;
+  @Input() loading: boolean;
 
   constructor() { }
-  ngOnInit() {
 
+  ngOnInit() {
   }
+
 }

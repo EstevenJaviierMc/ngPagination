@@ -3,7 +3,8 @@
 
 		<div class="col-lg-7">
 			<h1 class="text-center mb-3">Pots</h1>
-			<app-list-posts></app-list-posts>
+			<app-pagination [postsPerPage]="postsPerPage" [totalPosts]="posts.length" [(paginate)]="paginate" > </app-pagination>
+			<app-list-posts [posts]="currentPosts" [loading]="loading"></app-list-posts>
 		</div>
 
 	</div>

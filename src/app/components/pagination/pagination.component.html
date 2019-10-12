@@ -5,7 +5,6 @@
         <a class="page-link" routerLink="['#']" tabindex="-1" aria-disabled="true">Previous</a>
       </li>
       <li *ngFor="let pg of pageNumbers" class="page-item">
-
         <a class="page-link" routerLink="['#']" (click)="paginate(pg)">{{ pg }}</a>
       </li>
       <li class="page-item">
